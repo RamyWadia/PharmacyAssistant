@@ -41,7 +41,7 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                 user_text_input = right.text_input(
                     f"Please, Type {column} name:")
                 if user_text_input:
-                    df = df[df[column].astype(str).str.contains(user_text_input)]
+                    df = df[df[column].astype(str).str.contains(user_text_input.upper())]
 
     return df
 
