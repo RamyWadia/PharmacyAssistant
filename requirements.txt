@@ -1,2 +1,8 @@
-pandas==1.5.1
+git+https://github.com/hunkim/streamlit-google-oauth
+protobuf<=3.20.x 
 streamlit==1.13.0
+httpx-oauth
+python-dotenv
+typing_extensions
+pandas==1.5.1
+

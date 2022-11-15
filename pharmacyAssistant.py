@@ -1,4 +1,3 @@
-from logging import PlaceHolder
 from pandas.api.types import (
     is_categorical_dtype,
     is_numeric_dtype,
@@ -7,9 +6,6 @@ import pandas as pd
 import streamlit as st
 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-    # modify = st.checkbox("Add filters")
-    # if not modify:
-    #     return df
 
     df = df.copy()
     modification_container = st.container()
@@ -39,17 +35,13 @@ def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                 df = df[df[column].between(*user_num_input)]
             else:
                 user_text_input = right.text_input(
-                    f"Please, Type {column} name:")
+                    f"Please, Type {column} name:").upper()
                 if user_text_input:
                     df = df[df[column].astype(str).str.contains(user_text_input.upper())]
 
     return df
 
-Excel_file = 'Source.xlsx'
-sheet_name = 'DATA'
 
-df = pd.read_excel(Excel_file,engine='openpyxl',sheet_name=sheet_name,usecols='A:C',header=0)
-st.dataframe(filter_dataframe(df))
 
 
 
