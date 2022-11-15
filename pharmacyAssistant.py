@@ -7,9 +7,9 @@ import pandas as pd
 import streamlit as st
 
 def filter_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-    modify = st.checkbox("Add filters")
-    if not modify:
-        return df
+    # modify = st.checkbox("Add filters")
+    # if not modify:
+    #     return df
 
     df = df.copy()
     modification_container = st.container()
